@@ -4,6 +4,7 @@ class App extends Component{
   constructor(props){
     super(props);
 
+    // default value
     this.state = {
       changeResult: "change default value",
       inputResult: "input default value",
@@ -32,9 +33,14 @@ class App extends Component{
   render(){
     return(
       <div>
-        <input value={this.state.changeResult} onChange={this.onChange.bind(this)} placeholder="change" />
+        <input defaultValue={this.state.changeResult} onChange={this.onChange.bind(this)} placeholder="change" />
         {this.state.changeResult}
         <br />
+        <input defaultValue={this.state.inputResult} onChange={this.onInput.bind(this)} placeholder="input" />
+        {this.state.inputResult}
+        <br />
+        <input defaultValue={this.state.keyupResult} onChange={this.onKeyup.bind(this)} placeholder="keyup" />
+        {this.state.keyupResult}
       </div>
     )
   }
